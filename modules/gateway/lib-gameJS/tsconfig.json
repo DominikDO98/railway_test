@@ -43,7 +43,7 @@
     "noUnusedParameters": true,
     "noPropertyAccessFromIndexSignature": false,
     "noStrictGenericChecks": false,
-    "outDir": "./dist",
+    "outDir": "./lib",
     "preserveSymlinks": true,
     "pretty": true,
     "preserveConstEnums": true,
@@ -60,10 +60,11 @@
     "stripInternal": true,
     "sourceMap": false,
     "target": "ESNext",
+    "types": ["node"],
     "useDefineForClassFields": true,
     "useUnknownInCatchVariables": true,
     "verbatimModuleSyntax": false
   },
   "exclude": ["node_modules, __tests__"],
-  "include": ["src/**/*.ts", "lib-gameJS/**/*.ts", "env.d.ts"]
+  "include": ["src/**/*.ts", "env.d.ts"]
 }
