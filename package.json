@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon --exec tsx index.ts",
     "build": "cd modules/gateway && tsc && cd ../reciver && tsc",
-    "start": "sudo docker compose up"
+    "start": "docker compose up"
   },
   "keywords": [],
   "author": "",
