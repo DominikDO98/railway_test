@@ -63,7 +63,7 @@ export class RpcConnection {
         callback(replyQueue, msg);
       } catch (err) {
         logger.error(err as string, "Rpc connection", true);
-        if (msg) this._channel?.nack(msg);
+        if (msg) this._channel?.ack(msg);
       }
     });
   }
@@ -84,8 +84,8 @@ export class RpcConnection {
         if (!send) throw Error("Sending a msg was unsuccesful!");
         await this._channel?.consume(replyQueue, (replyMsg) => {
           if (!replyMsg) throw Error("No msg!");
-          logger.log(replyMsg.content.toString(), "Rpc connection");
           this._channel?.ack(replyMsg!);
+          logger.log(replyMsg.content.toString(), "Rpc connection");
           callback(replyMsg);
         });
       })

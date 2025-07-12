@@ -22,56 +22,56 @@ services:
       RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
       RABBITMQ_DEFAULT_VHOST: ${RABBITMQ_DEFAULT_VHOST}
 
-  reciver:
-    build:
-      context: ./modules/reciver
-      dockerfile: Dockerfile
-      args:
-        MONGODB_DB: ${MONGODB_DB}
-        MONGODB_USER: ${MONGODB_USER}
-        MONGODB_PASSWORD: ${MONGODB_PASSWORD}
-        MONGODB_URI: ${MONGODB_URI}
-        RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
-        RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
-        RABBITMQ_DEFAULT_VHOST: ${RABBITMQ_DEFAULT_VHOST}
-        RABBITMQ_URI: ${RABBITMQ_URI}
-    environment:
-      MONGOOB_DB: ${MONGODB_DB}
-      MONGODB_USER: ${MONGODB_USER}
-      MONGODB_PASSWORD: ${MONGODB_PASSWORD}
-      MONGODB_URI: ${MONGODB_URI}
-      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
-      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
-      RABBITMQ_DEFAULT_VHOST: ${RABBITMQ_DEFAULT_VHOST}
-      RABBITMQ_URI: ${RABBITMQ_URI}
-    depends_on:
-      - rabbitmq
-      - mongo
+  # reciver:
+  #   build:
+  #     context: ./modules/reciver
+  #     dockerfile: Dockerfile
+  #     args:
+  #       MONGODB_DB: ${MONGODB_DB}
+  #       MONGODB_USER: ${MONGODB_USER}
+  #       MONGODB_PASSWORD: ${MONGODB_PASSWORD}
+  #       MONGODB_URI: ${MONGODB_URI}
+  #       RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+  #       RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+  #       RABBITMQ_DEFAULT_VHOST: ${RABBITMQ_DEFAULT_VHOST}
+  #       RABBITMQ_URI: ${RABBITMQ_URI}
+  #   environment:
+  #     MONGOOB_DB: ${MONGODB_DB}
+  #     MONGODB_USER: ${MONGODB_USER}
+  #     MONGODB_PASSWORD: ${MONGODB_PASSWORD}
+  #     MONGODB_URI: ${MONGODB_URI}
+  #     RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+  #     RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+  #     RABBITMQ_DEFAULT_VHOST: ${RABBITMQ_DEFAULT_VHOST}
+  #     RABBITMQ_URI: ${RABBITMQ_URI}
+  #   depends_on:
+  #     - rabbitmq
+  #     - mongo
 
-  gateway:
-    build:
-      context: ./modules/gateway
-      dockerfile: Dockerfile
-      args:
-        MONGODB_DB: ${MONGODB_DB}
-        MONGODB_USER: ${MONGODB_USER}
-        MONGODB_PASSWORD: ${MONGODB_PASSWORD}
-        MONGODB_URI: ${MONGODB_URI}
-        RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
-        RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
-        RABBITMQ_DEFAULT_VHOST: ${RABBITMQ_DEFAULT_VHOST}
-        RABBITMQ_URI: ${RABBITMQ_URI}
-    environment:
-      MONGOOB_DB: ${MONGODB_DB}
-      MONGODB_USER: ${MONGODB_USER}
-      MONGODB_PASSWORD: ${MONGODB_PASSWORD}
-      MONGODB_URI: ${MONGODB_URI}
-      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
-      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
-      RABBITMQ_DEFAULT_VHOST: ${RABBITMQ_DEFAULT_VHOST}
-      RABBITMQ_URI: ${RABBITMQ_URI}
-    depends_on:
-      - rabbitmq
-      - mongo
-    ports:
-      - 3000:3000
+  # gateway:
+  #   build:
+  #     context: ./modules/gateway
+  #     dockerfile: Dockerfile
+  #     args:
+  #       MONGODB_DB: ${MONGODB_DB}
+  #       MONGODB_USER: ${MONGODB_USER}
+  #       MONGODB_PASSWORD: ${MONGODB_PASSWORD}
+  #       MONGODB_URI: ${MONGODB_URI}
+  #       RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+  #       RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+  #       RABBITMQ_DEFAULT_VHOST: ${RABBITMQ_DEFAULT_VHOST}
+  #       RABBITMQ_URI: ${RABBITMQ_URI}
+  #   environment:
+  #     MONGOOB_DB: ${MONGODB_DB}
+  #     MONGODB_USER: ${MONGODB_USER}
+  #     MONGODB_PASSWORD: ${MONGODB_PASSWORD}
+  #     MONGODB_URI: ${MONGODB_URI}
+  #     RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS}
+  #     RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER}
+  #     RABBITMQ_DEFAULT_VHOST: ${RABBITMQ_DEFAULT_VHOST}
+  #     RABBITMQ_URI: ${RABBITMQ_URI}
+  #   depends_on:
+  #     - rabbitmq
+  #     - mongo
+  #   ports:
+  #     - 3000:3000

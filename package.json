@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --exec tsx index.ts",
-    "build": "cd modules/gateway && tsc && cd ../reciver && tsc",
-    "start": "docker compose up"
+    "build": "rm -r modules/gateway/dist && rm -r modules/reciver/dist && cd modules/gateway && tsc && cd ../reciver && tsc",
+    "start:gateway": "node ./modules/gateway/dist/src/index.js",
+    "start:reciver": "node ./modules/reciver/dist/src/index.js",
+    "start": "concurrently  \"npm run start:gateway\" \"npm run start:reciver\""
   },
   "keywords": [],
   "author": "",
