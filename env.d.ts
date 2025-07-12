@@ -13,6 +13,8 @@ declare global {
       RABBITMQ_DEFAULT_PASS: string;
       RABBITMQ_DEFAULT_USER: string;
       RABBITMQ_DEFAULT_VHOST: string;
+      RABBITMQ_URI: string;
+      RABBITMQ_URI_LOCAL: string;
     }
   }
 }
